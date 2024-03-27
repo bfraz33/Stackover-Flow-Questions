@@ -6,8 +6,8 @@ import boto3
 
 snowflake_credentials = {
     "user": "bfraiz",
-    "password": "Lakers33",
-    "account": "kveyluu-fy59452",
+    "password": "YourPW",
+    "account": "",
     "warehouse": "DATA_WH",
     "database": "STACKOVER_FLOW",
     "schema": "EXTERNAL_DATA"
@@ -24,7 +24,7 @@ def kaggle_auth_setup(kaggle_auth, output_file):
     except:
         print("Setup Failed")
         
-kaggle_auth_setup('{"username": "bfraiz33", "key": "9c5486a1483afd0986934880af2b5ad6"}', 'creds.txt')
+kaggle_auth_setup('{"username": "YOUR_USERNAME", "key": "Your_key"}', 'creds.txt')
 
 csv_filename = "TotalQuestions.csv"
 df = pd.read_csv('C:/Users/bfraz/Snowflake/creds.txt')
@@ -70,8 +70,8 @@ try:
        CREATE OR REPLACE STAGE AWS_STAGE
        URL = 's3://project-stack-data/project-stack-data/python/'
        CREDENTIALS = (
-           AWS_KEY_ID='AKIA2UC26SN4WIB7GGML',
-           AWS_SECRET_KEY='gcXx/0YcW92mIXlRjIWVAkT4SmXBCjw6uTfM5GDQ'
+           AWS_KEY_ID='YOURKEY',
+           AWS_SECRET_KEY='YOURSECRETKEY'
 )""")
                 
     print("Stage created successfully!")
@@ -89,6 +89,3 @@ try:
 
 except Exception as e:
     print(f"An error occurred: {e}")
-
-#AKIA2UC26SN4WIB7GGML
-#gcXx/0YcW92mIXlRjIWVAkT4SmXBCjw6uTfM5GDQ
